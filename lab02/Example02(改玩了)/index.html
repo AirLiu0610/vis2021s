@@ -128,6 +128,7 @@
 					evt.preventDefault()
 
 					var files = evt.dataTransfer.files
+					console.log("files", files)
 
 					if (files.length) {
                         if (treemapContainer.innerHTML.length) {
@@ -145,6 +146,7 @@
 
                         fr.onload = function(){
                             dataLoader(fr.result, function(){
+								console.log(fr)
 								dataClassifier(objectKeys.value, function(data, layers){
 									node = getNode(data, layers, treemapContainer)
 									treemapContainer.innerHTML = node.innerHTML
